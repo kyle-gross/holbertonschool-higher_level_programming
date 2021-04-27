@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 n = 0
-for i in range(0, 10):
+for i in range(10):
     ii = 1 + n
     while ii < 10:
         print("{}{}".format(i, ii), end="")

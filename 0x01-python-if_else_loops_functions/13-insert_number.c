@@ -26,15 +26,19 @@ listint_t *insert_node(listint_t **head, int number)
 	new_node = malloc(sizeof(listint_t));
 	if (!new_node)
 		return (NULL);
-	trav = *head;
-	if (number < trav->n)
+	new_node->n = number;
+	if (!*head)
 	{
-		new_node = add_node_front(head, number);
-		if (!new_node)
-			return (NULL);
+		*head = new_node;
+		new_node->next = NULL;
 		return (new_node);
 	}
-	new_node->n = number;
+	trav = *head;
+	if (number <= trav->n)
+	{
+		new_node = add_node_front(head, number);
+		return (new_node);
+	}
 	while (number >= trav->next->n && trav->next)
 	{
 		trav = trav->next;
