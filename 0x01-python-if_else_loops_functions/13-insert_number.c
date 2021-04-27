@@ -30,6 +30,8 @@ listint_t *insert_node(listint_t **head, int number)
 	if (number < trav->n)
 	{
 		new_node = add_node_front(head, number);
+		if (!new_node)
+			return (NULL);
 		return (new_node);
 	}
 	new_node->n = number;
@@ -39,6 +41,8 @@ listint_t *insert_node(listint_t **head, int number)
 		if (trav->next == NULL && number < trav->n)
 		{
 			new_node = add_nodeint_end(head, number);
+			if (!new_node)
+				return (NULL);
 			return (new_node);
 		}
 	}
