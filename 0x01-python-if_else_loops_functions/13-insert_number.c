@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * insert_node - inserts a node somewhere in the middle of a linked list
  * @head: pointer to head of list
@@ -13,12 +15,12 @@ listint_t *insert_node(listint_t **head, int number)
 	if (!new_node)
 		return (NULL);
 	trav = *head;
-	while (number < n)
+	while (number > trav->next->n)
 	{
 		trav = trav->next;
-		if (trav->next == NULL)
+		if (trav->next == NULL && number < trav->n)
 		{
-			new_node = add_nodeint_end(&head, number);
+			new_node = add_nodeint_end(head, number);
 			return (new_node);
 		}
 	}
