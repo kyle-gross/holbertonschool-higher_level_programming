@@ -20,6 +20,7 @@ int *revArray(int *arr)
 	{
 		newArr[i] = arr[ii];
 	}
+	free(arr);
 	return (newArr);
 }
 /**
