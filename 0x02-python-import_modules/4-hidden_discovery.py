@@ -4,6 +4,6 @@ if __name__ == "__main__":
     dirlen = len(dir(hidden_4))
     for i in range(dirlen):
         names = dir(hidden_4)[i]
-        if names.startswith("__") == True:
+        if names.startswith("__"):
             continue
         print("{}".format(names))
