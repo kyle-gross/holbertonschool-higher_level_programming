@@ -63,11 +63,7 @@ int is_palindrome(listint_t **head)
 		return (0);
 	/* Loop to middle of list and populate arr1 */
 	while (i < len / 2)
-	{
-		arr1[i] = mid->n;
-		mid = mid->next;
-		i++;
-	}
+	{arr1[i] = mid->n, mid = mid->next, i++; }
 	/* If list size is odd, skip middle node */
 	if (len % 2 != 0)
 		mid = mid->next;
