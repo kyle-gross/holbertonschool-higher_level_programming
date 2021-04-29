@@ -2,36 +2,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * listint_len - returns the length of a linked list
- * @h: pointer to head of list
- * Return: the number of nodes
- */
-size_t listint_len(const listint_t *h)
-{
-	size_t count = 0;
-
-	if (!h)
-		return (count);
-	while (h->next)
-	{
-		count++;
-		h = h->next;
-	}
-	count++;
-	return (count);
-}
-/**
  * is_palindrome - checks if a singly linked list is a palindrome
  * @head: pointer to head of list
  * Return: 0 if NOT palindrome, 1 if it is
  */
 int is_palindrome(listint_t **head)
 {
-	size_t len = listint_len(*head), i = 0;
-	listint_t *mid = *head, *trav, *temp;
+	size_t len = 0, i = 0;
+	listint_t *mid = *head, *trav = *head, *temp;
 
 	if (!head || !*head)
 		return (1);
+	/* Get length of list */
+	while (trav->next)
+		trav = trav->next, len++;
 	/* Move mid to middle of list */
 	while (i < len / 2)
 	{
