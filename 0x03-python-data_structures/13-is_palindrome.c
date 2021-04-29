@@ -8,20 +8,20 @@
  */
 int *revArray(int *arr)
 {
-	int *newArr, i = 0, ii = 0, len = 0;
+	int *newArr = NULL, i = 0, ii = 0, len = 0;
 
 	while (arr[i])
 		len++, i++;
-	newArr = malloc(sizeof(int) * len);
+/*	newArr = malloc(sizeof(int) * len);
 	if (!newArr)
 		return (NULL);
-	ii = len - 1;
+*/	ii = len - 1;
 	for (i = 0; i < len; i++, ii--)
 	{
 		newArr[i] = arr[ii];
 	}
-	free(arr);
-	return (newArr);
+/*	free(arr);
+*/	return (newArr);
 }
 /**
  * listint_len - returns the length of a linked list
@@ -49,21 +49,28 @@ size_t listint_len(const listint_t *h)
  */
 int is_palindrome(listint_t **head)
 {
-	size_t len = listint_len(*head), i = 0;
+	size_t len = listint_len(*head), i = 0, halfLen = len / 2;
 	listint_t *mid = *head;
-	int *arr1, *arr2;
+	int arr1[halfLen], arr2[halfLen];
 
 	if (!head || !*head)
 		return (1);
-	arr1 = malloc(sizeof(int) * (len / 2));
+/*	arr1 = malloc(sizeof(int) * (len / 2));
 	if (!arr1)
 		return (0);
 	arr2 = malloc(sizeof(int) * (len / 2));
 	if (!arr2)
 		return (0);
-	/* Loop to middle of list and populate arr1 */
+*/	/* Loop to middle of list and populate arr1 */
+	printf("before first while\n");
 	while (i < len / 2)
-	{arr1[i] = mid->n, mid = mid->next, i++; }
+	{
+		printf("loop #%ld\n", i);
+		arr1[i] = mid->n;
+		mid = mid->next;
+		i++;
+	}
+	printf("After first while\n");
 	/* If list size is odd, skip middle node */
 	if (len % 2 != 0)
 		mid = mid->next;
@@ -81,11 +88,11 @@ int is_palindrome(listint_t **head)
 	{
 		if (arr1[i] != arr2[i])
 		{
-			free(arr1), free(arr2);
-			return (0);
+/*			free(arr1), free(arr2);
+*/			return (0);
 		}
 	}
 	/* Free arrays */
-	free(arr1), free(arr2);
-	return (1);
+/*	free(arr1), free(arr2);
+*/	return (1);
 }
