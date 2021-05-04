@@ -4,5 +4,5 @@ Currently, this class does nothing"""
 
 
 class Square:
-"""This class does nothing"""
+    """This class does nothing"""
     pass
