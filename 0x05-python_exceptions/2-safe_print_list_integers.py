@@ -1,5 +1,12 @@
 #!/usr/bin/python3
+"""
+safe_print_list_integers - prints 'x' elements of integers
+only prints integers, other data types handed by except
+"""
+
+
 def safe_print_list_integers(my_list=[], x=0):
+    """ if x > list length, only the length of the shorter list is printed"""
     count = 0
     try:
         for i in range(x):
@@ -8,5 +15,5 @@ def safe_print_list_integers(my_list=[], x=0):
                 count += 1
         print()
         return count
-    except TypeError:
+    except (TypeError, IndexError):
         return None

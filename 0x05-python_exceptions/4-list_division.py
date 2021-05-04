@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+list_division - divides 2 lists of integers
+"""
+
+
 def list_division(my_list_1, my_list_2, list_length):
+    """ if conflicting data type, add '0' to that list index"""
     new_list = []
     for i in range(list_length):
         try:
