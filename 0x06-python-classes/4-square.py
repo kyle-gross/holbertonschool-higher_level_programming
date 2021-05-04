@@ -10,7 +10,7 @@ class Square:
         and gives it a size.
         Raises a TypeError if given size is not an integer.
         Raises a ValueError if size is less than 0."""
-        self.__size = 0
+        self.__size = size
 
     @property
     def size(self):
