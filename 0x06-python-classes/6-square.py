@@ -8,8 +8,8 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """init function which constructs a Square object
         and gives it a size."""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -38,8 +38,11 @@ class Square:
         """This function sets the position of a square
         Raises a TypeError if not a tuple
         containing 2 integers or a value is < 0"""
-        if not (isinstance(value, (tuple, int)) and
-                len(value) != 2 and min(value) < 0):
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif not min(value) >= 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
