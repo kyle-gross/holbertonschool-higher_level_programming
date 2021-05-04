@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""
-safe_print_list - prints a list of integers even if there
-is an index error
-"""
+"""This module prints 'x' elements of a list"""
 
 
 def safe_print_list(my_list=[], x=0):
-    """ returns a count of the printed items
+    """This function prints integers from a list
+
+    Args:
+        my_list (list): first parameter
+        x (int): second parameter
+
+    Return: count - # of items printed
     """
     if my_list is None:
         return 0
