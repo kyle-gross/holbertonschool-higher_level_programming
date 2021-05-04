@@ -5,7 +5,7 @@ The size of the square is initialized"""
 
 class Square:
     """Square class initializes the size as a private instance attribute"""
-    def __init__(self, size):
+    def __init__(self, size=0):
         """init function which initializes a Square object
         and gives it a size.
         Raises a TypeError if given size is not an integer.
