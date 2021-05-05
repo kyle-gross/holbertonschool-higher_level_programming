@@ -7,7 +7,8 @@ text with 2 new lines after each of these characters: '.', '?', and ':'
 
 def text_indentation(text):
     """
-    prints a text with 2 new lines after each of these characters: '.', '?', and ':'
+    prints a text with 2 new lines after each of these characters:
+    '.', '?', and ':'
     * <text> must be a string, otherwise raise a TypeError with message:
       "text must be a string"
     * There should be no space at the beginning or end of each printed line

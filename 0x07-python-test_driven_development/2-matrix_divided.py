@@ -13,29 +13,32 @@ def matrix_divided(matrix, div):
     """
     # None checks
     if not matrix:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError
+        ("matrix must be a matrix (list of lists) of integers/floats")
 
     # Verify that list is matrix
     if not all(isinstance(ele, list) for ele in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError
+        ("matrix must be a matrix (list of lists) of integers/floats")
 
     # Verify that the matrix contains integers or floats
     # Verify that matrix row lengths are equal
     row_len = len(matrix[0])
     for row in range(len(matrix)):
         if row_len != len(matrix[row]):
-            raise TypeError("Each row of the matrix must have the same size")
+            raise TypeError
+            ("Each row of the matrix must have the same size")
         for element in range(len(matrix[row])):
             if not isinstance(matrix[row][element], (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-
+                raise TypeError
+                ("matrix must be a matrix (list of lists) of integers/floats")
 
     # Verify that div is a number (integer/float)
     if isinstance(div, (int, float)):
         # Verify that div is not 0
         if div == 0:
             raise ZeroDivisionError("division by zero")
-    else:    
+    else:
         raise TypeError("div must be a number")
 
     # Store division results in new matrix rounded to 2 decimal places

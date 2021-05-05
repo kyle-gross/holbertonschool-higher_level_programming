@@ -17,7 +17,7 @@ def add_integer(a, b=98):
         a = int(a)
     if isinstance(b, float):
         b = int(b)
-    
+
     # Check for strings
     if isinstance(a, str):
         raise TypeError("a must be an integer")
