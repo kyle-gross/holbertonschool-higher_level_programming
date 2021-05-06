@@ -44,7 +44,7 @@ This function accepts strings:
     My name is:
     <BLANKLINE>
     Kyle?
-
+    <BLANKLINE>
 
 and handles other types:
 ----------------
