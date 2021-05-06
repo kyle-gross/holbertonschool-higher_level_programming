@@ -18,6 +18,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_random(self):
         """Tests random inputs"""
+        self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer([5, 5, 5, 5]), 5)
         self.assertEqual(max_integer([-5, 5, -10, 10]), 10)
