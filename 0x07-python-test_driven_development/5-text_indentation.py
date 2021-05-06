@@ -34,9 +34,6 @@ def text_indentation(text):
         else:
             new_str += text_list[item]
 
-
-
-
     text_list2 = new_str.split("?")
     for item in range(len(text_list2)):
         for char in range(len(text_list2[item])):

@@ -62,3 +62,8 @@ and handles other types:
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
+
+    >>> text_indentation() # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError:
