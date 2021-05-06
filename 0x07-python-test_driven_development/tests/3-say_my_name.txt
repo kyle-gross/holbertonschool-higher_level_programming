@@ -17,6 +17,11 @@ This function accepts strings:
     >>> say_my_name("Bob")
     My name is Bob 
 
+    >>> say_my_name() # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError:
+
     
 and handles other types:
 ----------------
