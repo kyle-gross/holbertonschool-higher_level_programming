@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
 This module contains the Rectangle class
+Rectangles have the attributes:
+    height: the height of rectangle
+    width: the width of rectangle
 """
 
 
