@@ -20,6 +20,11 @@ This function can handle integers and floats:
     ##########
     ##########
 
+    >>> print_square() # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError:
+
     >>> print_square(0)
 
     >>> print_square(10.5)
@@ -31,7 +36,6 @@ This function can handle integers and floats:
     Traceback (most recent call last):
         ...
     ValueError: size must be >= 0
-
     
 and other data types:
 ----------------
