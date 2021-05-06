@@ -45,6 +45,11 @@ and floats:
         ...
     TypeError:
 
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
 and None values:
 ----------------
 
