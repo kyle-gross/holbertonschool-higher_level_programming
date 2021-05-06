@@ -42,6 +42,16 @@ and verifies that div is an integer/float and NOT 0:
         ...
     TypeError: div must be a number
 
+    >>> matrix_divided([1, 2, 3]) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError:
+
+    >>> matrix_divided() # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError:
+
 
 and None values:
 ----------------
