@@ -25,9 +25,10 @@ def text_indentation(text):
     text_list = text.split(". ")
     for item in range(len(text_list)):
         # Remove spaces from beginning of item
-        for char in range(len(item)):
+        for char in range(item):
             if text_list[item][char] != ' ':
                 text_list[item] = text_list[item][char:]
+                break
         if item < len(text_list) - 1:
             new_str += text_list[item] + '.\n\n'
         else:
@@ -35,9 +36,10 @@ def text_indentation(text):
 
     text_list2 = new_str.split("? ")
     for item in range(len(text_list2)):
-        for char in range(len(item)):
+        for char in range(item):
             if text_list2[item][char] != ' ':
                 text_list2[item] = text_list2[item][char:]
+                break
         if item < len(text_list2) - 1:
             new_str2 += text_list2[item] + '?\n\n'
         else:
@@ -45,9 +47,10 @@ def text_indentation(text):
 
     text_list3 = new_str2.split(": ")
     for item in range(len(text_list3)):
-        for char in range(len(item)):
+        for char in range(item):
             if text_list3[item][char] != ' ':
                 text_list3[item] = text_list3[item][char:]
+                break
         if item < len(text_list3) - 1:
             new_str3 += text_list3[item] + ':\n\n'
         else:
