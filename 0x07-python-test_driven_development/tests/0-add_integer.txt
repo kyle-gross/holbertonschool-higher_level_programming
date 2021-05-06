@@ -40,10 +40,10 @@ and floats:
     >>> add_integer(2)
     100
 
-    >>> add_integer()
+    >>> add_integer() # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
-    TypeError: a must be an integer
+    TypeError:
 
 and None values:
 ----------------
