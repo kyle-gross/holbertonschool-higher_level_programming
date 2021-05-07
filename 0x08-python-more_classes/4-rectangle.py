@@ -24,6 +24,10 @@ class Rectangle:
             + ("#" * self.width)
         return rectangle
 
+    def __repr__(self):
+        """Returns a string representation of a Rectangle object"""
+        return 'Rectangle(%d, %d)' % (self.width, self.height)
+
     @property
     def width(self):
         """Getter for width"""
