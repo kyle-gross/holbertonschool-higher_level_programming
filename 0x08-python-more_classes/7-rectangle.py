@@ -10,7 +10,10 @@ Rectangles have the attributes:
 class Rectangle:
     """
     This class creates a Rectangle object
-        number_of_instances keeps track of number of Rectangles
+    Attributes:
+        number_of_instances: keeps track of number of Rectangles
+        print_symbol: the symbol to print when building Rectangle
+            strings
     """
     number_of_instances = 0
     print_symbol = "#"
@@ -25,8 +28,11 @@ class Rectangle:
         """Prints a rectangle object"""
         if self.height == 0 or self.width == 0:
             return ""
-        rectangle = ((self.print_symbol * self.width) + "\n")\
-            * (self.height - 1) + (self.print_symbol * self.width)
+        rectangle = ""
+        for i in range self.height
+            rectangle += str(self.print_symbol) * self.width
+            if i < self.height - 1:
+                rectangle += "\n"
         return rectangle
 
     def __del__(self):
