@@ -44,6 +44,18 @@ class Rectangle:
         """Returns a string representation of a Rectangle object"""
         return 'Rectangle(%d, %d)' % (self.width, self.height)
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Static method which returns bigggest rectangle based on area"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area >= rect_2.area:
+            return rect_1
+        else:
+            return rect_2
+
     @property
     def width(self):
         """Getter for width"""
@@ -73,18 +85,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """Static method which returns bigggest rectangle based on area"""
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        rect_areas = []
-        rect_areas.append(rect_1.area)
-        rect_areas.append(rect_2.area)
-        return max(rect_areas)
 
     def area(self):
         """Returns area of rectangle"""
