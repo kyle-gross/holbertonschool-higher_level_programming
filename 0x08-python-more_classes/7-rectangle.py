@@ -25,8 +25,8 @@ class Rectangle:
         """Prints a rectangle object"""
         if self.height == 0 or self.width == 0:
             return ""
-        rectangle = ((print_symbol * self.width) + "\n") * (self.height - 1)\
-            + (print_symbol * self.width)
+        rectangle = ((self.print_symbol * self.width) + "\n")\
+            * (self.height - 1) + (self.print_symbol * self.width)
         return rectangle
 
     def __del__(self):
