@@ -29,7 +29,7 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             return ""
         rectangle = ""
-        for i in range self.height
+        for i in range(self.height):
             rectangle += str(self.print_symbol) * self.width
             if i < self.height - 1:
                 rectangle += "\n"
