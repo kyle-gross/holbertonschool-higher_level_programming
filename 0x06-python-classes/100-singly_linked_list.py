@@ -56,21 +56,19 @@ class SinglyLinkedList:
         if value <= temp.data:
             new_node.next_node = temp
             self.head = new_node
-            return
+            return self.head
 
         while temp.next_node:
             if temp.next_node.data > value:
                 break
             temp = temp.next_node
 
-        if temp.next_node is None and value > temp.data:
-            temp.next_node = new_node
-        else:
-            new_node.next_node = temp.next_node
-            temp.next_node = new_node
+        new_node.next_node = temp.next_node
+        temp.next_node = new_node
         return self.head
 
     def __str__(self):
+        """returns string version of self"""
         data = []
         current = self.head
         while current is not None:
