@@ -16,14 +16,15 @@ class Square:
         if self.__size is 0:
             return ""
         square = ""
-        for i in range(self.__position[1]):
+        for i in range(self.position[1]):
             square += "\n"
-        for i in range(self.__size):
-            for k in range(self.__position[0]):
+        for i in range(self.size):
+            for k in range(self.position[0]):
                 square += " "
-            for j in range(self.__size):
+            for j in range(self.size):
                 square += "#"
-            square += "\n"
+            if i < self.size - 1:
+                square += "\n"
         return square
 
     @property
