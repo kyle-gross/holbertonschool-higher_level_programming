@@ -63,8 +63,11 @@ class SinglyLinkedList:
                 break
             temp = temp.next_node
 
-        new_node.next_node = temp.next_node
-        temp.next_node = new_node
+        if temp.next_node is None and value > temp.data:
+            temp.next_node = new_node
+        else:
+            new_node.next_node = temp.next_node
+            temp.next_node = new_node
         return self.head
 
     def __str__(self):
