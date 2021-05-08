@@ -9,8 +9,8 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """This method constructs a node"""
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -43,20 +43,20 @@ class SinglyLinkedList:
     """This class creates singly linked lists"""
     def __init__(self):
         """Constructs a linked list object"""
-        self.head = None
+        self.__head = None
 
     def sorted_insert(self, value):
         """Inserts a node in a linked list ordered by value"""
         new_node = Node(value)
-        if self.head is None:
-            self.head = new_node
-            return self.head
+        if self.__head is None:
+            self.__head = new_node
+            return
 
-        temp = self.head
+        temp = self.__head
         if value <= temp.data:
             new_node.next_node = temp
-            self.head = new_node
-            return self.head
+            self.__head = new_node
+            return
 
         while temp.next_node:
             if temp.next_node.data > value:
@@ -65,12 +65,11 @@ class SinglyLinkedList:
 
         new_node.next_node = temp.next_node
         temp.next_node = new_node
-        return self.head
 
     def __str__(self):
         """returns string version of self"""
         data = []
-        current = self.head
+        current = self.__head
         while current is not None:
             data.append(current.data)
             current = current.next_node
