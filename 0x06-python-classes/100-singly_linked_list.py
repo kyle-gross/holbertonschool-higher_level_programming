@@ -6,7 +6,7 @@
 
 class Node:
     """This class creates nodes for a singly linked list"""
-    
+
     def __init__(self, data, next_node=None):
         """This method constructs a node"""
         self.data = data
@@ -33,10 +33,11 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         """Setter for next_node"""
-        if not isinstance(value, Node) and value != None:
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next node must be a Node object")
         else:
             self.__next_node = value
+
 
 class SinglyLinkedList:
     """This class creates singly linked lists"""
@@ -72,4 +73,4 @@ class SinglyLinkedList:
         while current is not None:
             data.append(current.data)
             current = current.next_node
-        return "%s" %('\n'.join(str(i) for i in data))
+        return "%s" % ('\n'.join(str(i) for i in data))
