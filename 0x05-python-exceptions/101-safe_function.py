@@ -1,4 +1,4 @@
-#!/bin/bash/python3
+#!/usr/bin/python3
 """This module contains a function
     ...
     that executes a function!
