@@ -68,6 +68,8 @@ class SinglyLinkedList:
 
     def __str__(self):
         """returns string version of self"""
+        if self.__head is None:
+            return ""
         data = []
         current = self.__head
         while current is not None:
