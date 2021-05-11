@@ -4,6 +4,14 @@
 
 class BaseGeometry:
     """This class defines behavior for BaseGeometry"""
+    def __init__(self, width, height):
+        """This constructs shapes"""
+        if BaseGeometry.integer_validator(self, "width", width):
+            self.__width = width
+        if BaseGeometry.integer_validator(self, "height", height):
+            self.__height = height
+
+
     def area(self):
         """This function raises an exception with a message"""
         raise Exception("area() is not implemented")
@@ -20,7 +28,4 @@ class Rectangle(BaseGeometry):
     """This class inherits from BaseGeometry"""
     def __init__(self, width, height):
         """This constructs Rectangle objects"""
-        if BaseGeometry.integer_validator(self, "width", width):
-            self.__width = width
-        if BaseGeometry.integer_validator(self, "height", height):
-            self.__height = height
+        BaseGeometry.__init__(self, width, height)
