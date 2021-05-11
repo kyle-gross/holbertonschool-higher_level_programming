@@ -2,14 +2,15 @@
 """This module contains the Square class"""
 
 
-Square = __import__('9-rectangle').Rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
     """This class inherits from the Rectangle class"""
     def __init__(self, size):
         """This function constructs a square object"""
-        self.integer_validator(size)
+        super().__init__(size, size)
+        self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
