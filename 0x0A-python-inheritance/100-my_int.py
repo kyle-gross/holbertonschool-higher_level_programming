@@ -7,16 +7,13 @@ class MyInt(int):
        but it doesn't want to be.
     """
     def __init__(self, num):
-        super().__init__()
-        if num < 0:
-            num = -num
         self.num = num
 
     def __eq__(self, other):
         """== magic method"""
         if self.num is other:
             return False
-        return True
+        return not other
 
     def __ne__(self, other):
         """!= magic method"""
