@@ -17,6 +17,11 @@ class MyInt(int):
 
     def __ne__(self, other):
         """!= magic method"""
-        if self.num is not other:
+        if self.num < 0:
+            if self.num is not other:
+                return True
+            else:
+                return False
+        if self.num is other:
             return True
         return False
