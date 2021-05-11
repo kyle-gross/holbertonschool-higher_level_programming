@@ -11,3 +11,13 @@
 
 >>> print(my_list)
 [1, 4, 2, 5, 3]
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(-1)
+>>> my_list.print_sorted()
+[-1, 1, 2]
