@@ -7,6 +7,8 @@ class MyInt(int):
        but it doesn't want to be.
     """
     def __init__(self, num):
+        if num < 0:
+            num = -num
         self.num = num
 
     def __eq__(self, other):
