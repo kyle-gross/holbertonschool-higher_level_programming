@@ -17,8 +17,8 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """This is a magic method which returns a rectangle string"""
-        return "[Rectangle]" + str(self.width) + "/" + str(self.height)
+        return "[Rectangle]" + str(self.__width) + "/" + str(self.__height)
 
     def area(self):
         """This method returns the area of a Rectangle object"""
-        return self.width * self.height
+        return self.__width * self.__height
