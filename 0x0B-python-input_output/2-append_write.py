@@ -7,6 +7,6 @@
 def append_write(filename="", text=""):
     """This function appends <text> to <filename>"""
     with open(filename, mode='a', encoding='utf-8') as afile:
-        afile.append(text)
+        afile.write(text)
 
     return len(text)
