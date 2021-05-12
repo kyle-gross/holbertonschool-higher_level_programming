@@ -20,5 +20,5 @@ def pascal_triangle(n):
             sub_list.append(n)
             n = n * (i - j) // j
         my_list.append(sub_list)
-    
+
     return my_list
