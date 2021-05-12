@@ -6,3 +6,5 @@ def write_file(filename="", text=""):
     """This function writes <text> to <filename>"""
     with open(filename, mode="w", encoding="utf-8") as afile:
         afile.write(text)
+
+    return len(afile)
