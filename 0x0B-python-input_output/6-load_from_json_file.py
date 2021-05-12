@@ -7,6 +7,8 @@
 def load_from_json_file(filename):
     """This function creates an object from a JSON file"""
     import json
-    with open(filename, encoding="utf-8") as afile:
-        objJson = json.dumps(afile)
-        obj = json.loads(objJson)
+    with open(filename) as afile:
+        obj_str = afile.read()
+        obj = json.load(obj_str)
+
+    return obj
