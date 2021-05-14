@@ -6,6 +6,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
+
     """This class creates Rectangle objects"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -15,6 +16,12 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+
+    def __str__(self):
+        """Returns str representation of Rectangle object"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
 
     def area(self):
         """Returns the area of a Rectangle object"""
