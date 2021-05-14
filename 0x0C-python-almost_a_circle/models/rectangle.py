@@ -23,6 +23,24 @@ class Rectangle(Base):
                                                        self.y, self.width,
                                                        self.height)
 
+    def update(self, *args):
+        """This method updates a Rectangle object"""
+        largs = list(args)
+        if len(largs) == 5:
+            self.y = largs[4]
+            largs.pop()
+        if len(largs) == 4:
+            self.x = largs[3]
+            largs.pop()
+        if len(largs) == 3:
+            self.height = largs[2]
+            largs.pop()
+        if len(largs) == 2:
+            self.width = largs[1]
+            largs.pop()
+        if len(largs) == 1:
+            self.id = largs[0]
+
     def area(self):
         """Returns the area of a Rectangle object"""
         return self.width * self.height
