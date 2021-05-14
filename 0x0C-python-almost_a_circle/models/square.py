@@ -17,6 +17,18 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.size)
 
+    def update(self, *args, **kwargs):
+        """This method updates a Rectangle object"""
+        if args is None or len(args) == 0:
+            for i in kwargs:
+                if hasattr(self, i):
+                    setattr(self, i, kwargs[i])
+        else:
+            largs = list(args)
+            latts = ["id", "size", "x", "y"]
+            for i in range(len(largs)):
+                setattr(self, latts[i], largs[i])
+
     @property
     def size(self):
         """Getter for size"""
