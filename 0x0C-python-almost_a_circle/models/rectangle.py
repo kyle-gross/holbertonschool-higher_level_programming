@@ -29,7 +29,9 @@ class Rectangle(Base):
 
     def display(self):
         """This method prints a Rectangle instance to stdout"""
+        print("\n" * self.y, end="")
         for i in range(self.height):
+            print(" " * self.x, end="")
             for j in range(self.width):
                 print("#", end="")
             print()
