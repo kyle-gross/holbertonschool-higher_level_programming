@@ -6,7 +6,6 @@ from models.base import Base
 
 
 class Rectangle(Base):
-
     """This class creates Rectangle objects"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -76,3 +75,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = y
+
+    def area(self):
+        """Returns the area of a Rectangle object"""
+        return self.width * self.height
