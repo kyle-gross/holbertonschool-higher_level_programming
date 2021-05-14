@@ -3,10 +3,13 @@
 
 
 from models.rectangle import Rectangle
+import inspect
 
 
 class Square(Rectangle):
+
     """This class creates Square objects"""
+
     def __init__(self, size, x=0, y=0, id=None):
         """This method constructs Square objects"""
         super().__init__(size, size, x, y, id)
@@ -28,6 +31,15 @@ class Square(Rectangle):
             latts = ["id", "size", "x", "y"]
             for i in range(len(largs)):
                 setattr(self, latts[i], largs[i])
+
+    def to_dictionary(self):
+        """Returns dict representation of a Rectangle object"""
+        my_dict = {}
+        for i in inspect.getmembers(self):
+            if not i[0].startswith("_"):
+                if not inspect.ismethod(i[1]):
+                    my_dict[i[0]] = i[1]
+        return my_dict
 
     @property
     def size(self):
