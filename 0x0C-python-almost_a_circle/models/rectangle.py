@@ -42,7 +42,7 @@ class Rectangle(Base):
         for i in inspect.getmembers(self):
             if not i[0].startswith("_"):
                 if not inspect.ismethod(i[1]) and not\
-                       inspect.isfunction[1]:
+                       inspect.isfunction(i[1]):
                     my_dict[i[0]] = i[1]
         return my_dict
 
