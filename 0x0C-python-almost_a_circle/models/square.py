@@ -9,13 +9,13 @@ class Square(Rectangle):
     """This class creates Square objects"""
     def __init__(self, size, x=0, y=0, id=None):
         """This method constructs Square objects"""
-        self.size = size
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
         """Returns a string representation of a Square object"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
-                                                 self.width)
+                                                 self.size)
 
     @property
     def size(self):
@@ -23,11 +23,11 @@ class Square(Rectangle):
         return self.__size
 
     @size.setter
-    def size(self, size):
+    def size(self, value):
         """Setter for size"""
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif size <= 0:
+        elif value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.__size = size
+            self.__size = value
