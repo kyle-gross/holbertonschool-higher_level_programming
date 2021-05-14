@@ -38,7 +38,7 @@ class Square(Rectangle):
         for i in inspect.getmembers(self):
             if not i[0].startswith("_"):
                 if not inspect.ismethod(i[1]):
-                    if i[1] == "height" or i[1] == "width":
+                    if i[0] == "height" or i[0] == "width":
                         continue
                     my_dict[i[0]] = i[1]
         return my_dict
