@@ -34,7 +34,7 @@ class Rectangle(Base):
         latts = ["id", "width", "height", "x", "y"]
         for i in range(len(largs)):
             setattr(self, latts[i], largs[i])
-    
+
     def area(self):
         """Returns the area of a Rectangle object"""
         return self.width * self.height
