@@ -29,11 +29,15 @@ class Rectangle(Base):
             for i in kwargs:
                 if hasattr(self, i):
                     setattr(self, i, kwargs[i])
-            return
-        largs = list(args)
-        latts = ["id", "width", "height", "x", "y"]
-        for i in range(len(largs)):
-            setattr(self, latts[i], largs[i])
+        else:
+            largs = list(args)
+            latts = ["id", "width", "height", "x", "y"]
+            for i in range(len(largs)):
+                setattr(self, latts[i], largs[i])
+
+    def to_dictionary(self):
+        """Returns dict representation of a Rectangle object"""
+        return self.__dict__
 
     def area(self):
         """Returns the area of a Rectangle object"""
