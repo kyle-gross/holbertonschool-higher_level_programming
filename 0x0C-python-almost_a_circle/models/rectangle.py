@@ -42,6 +42,8 @@ class Rectangle(Base):
         for i in inspect.getmembers(self):
             if not i[0].startswith("_"):
                 if not inspect.ismethod(i[1]):
+                    if i[0] == "to_json_string":
+                        continue
                     my_dict[i[0]] = i[1]
         return my_dict
 
