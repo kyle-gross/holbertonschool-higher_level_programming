@@ -3,6 +3,7 @@
 
 
 from models.base import Base
+import inspect
 
 
 class Rectangle(Base):
@@ -37,7 +38,12 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns dict representation of a Rectangle object"""
-        return self.__dict__
+        my_dict = {}
+        for i in inspect.getmembers(self):
+            if not i[0].startswith("_"):
+                if not inspect.ismethod(i[1]):
+                    my_dict[i[0]] = i[1]
+        return my_dict
 
     def area(self):
         """Returns the area of a Rectangle object"""
