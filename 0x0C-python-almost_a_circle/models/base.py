@@ -28,7 +28,10 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Returns the JSON string representation of <json_string>"""
-        return json.loads(json_string)
+        if json_string:
+            return json.loads(json_string)
+        else:
+            return []
 
     @classmethod
     def save_to_file(cls, list_objs):
