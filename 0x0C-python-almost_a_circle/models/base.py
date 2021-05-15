@@ -49,3 +49,10 @@ class Base:
             json_str = "[]"
         with open(filename, "w") as file:
             file.write(json_str)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """This method returns an instance with all attributes already set"""
+        dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
