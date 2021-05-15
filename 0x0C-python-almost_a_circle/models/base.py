@@ -39,5 +39,5 @@ class Base:
             json_str = to_json_string(my_list)
         else:
             json_str = "[]"
-        with open(filename, mode="w", encoding="utf-8") as file:
+        with open(filename, "w") as file:
             file.write(json_str)
