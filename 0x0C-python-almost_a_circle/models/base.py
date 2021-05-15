@@ -36,7 +36,7 @@ class Base:
             for obj in list_objs:
                 my_dict = cls.to_dictionary(obj)
                 my_list.append(my_dict)
-            json_str = to_json_string(my_list)
+            json_str = cls.to_json_string(my_list)
         else:
             json_str = "[]"
         with open(filename, "w") as file:
