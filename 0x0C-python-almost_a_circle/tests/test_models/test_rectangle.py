@@ -4,7 +4,7 @@
 
 import unittest
 from models.base import Base
-from models.recangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.Testcase):
