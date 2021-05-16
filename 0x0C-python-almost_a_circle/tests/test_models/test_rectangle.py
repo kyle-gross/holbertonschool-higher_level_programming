@@ -43,3 +43,13 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_val_error(self):
         with self.assertRaises(ValueError):
             rect = Rectangle(0, 1)
+        with self.assertRaises(ValueError):
+            rect = Rectangle(1, 0)
+        with self.assertRaises(ValueError):
+            rect = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            rect = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            rect = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            rect = Rectangle(1, 2, 3, -4)
