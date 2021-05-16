@@ -20,8 +20,14 @@ class TestBase(unittest.TestCase):
         base3 = Base(89)
         self.assertEqual(base3.id, 89)
 
-    def test_json_strings(self):
+    def test_to_json_string(self):
         json_str = Base.to_json_string(None)
         self.assertEqual(json_str, "[]")
         json_str = Base.to_json_string([])
         self.assertEqual(json_str, "[]")
+
+    def test_from_json_string(self):
+        json_list = Base.from_json_string(None)
+        self.assertEqual(json_list, [])
+        json_list = Base.from_json_string("[]")
+        self.assertEqual(json_list, [])
