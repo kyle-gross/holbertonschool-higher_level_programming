@@ -23,11 +23,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.y, 2)
 
     def test_rectangle_type_error(self):
-        with assertRaises(TypeError):
+        with self.assertRaises(TypeError):
             rect = Rectangle("1", 2)
-        with assertRaises(TypeError):
+        with self.assertRaises(TypeError):
             rect = Rectangle(1, "2")
 
     def test_rectangle_val_error(self):
-        with assertRaises(ValueError):
+        with self.assertRaises(ValueError):
             rect = Rectangle(0, 1)
