@@ -14,7 +14,9 @@ class TestBase(unittest.TestCase):
         """This method tests id functionality of Base"""
         base = Base()
         self.assertEqual(base.id, 1)
-        base2 = Base()
+        base2 = Base(None)
         self.assertEqual(base2.id, 2)
-        base3 = Base(3)
-        self.assertEqual(base3.id, 3)
+        
+    def test_passed_id(self):
+        base3 = Base(89)
+        self.assertEqual(base3.id, 89)
