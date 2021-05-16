@@ -22,11 +22,23 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 1)
         self.assertEqual(rect.y, 2)
 
+    def test_rectangle_5_args(self):
+        rect = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
+        self.assertEqual(rect.id, 5)
+
     def test_rectangle_type_error(self):
         with self.assertRaises(TypeError):
             rect = Rectangle("1", 2)
         with self.assertRaises(TypeError):
             rect = Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            rect = Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            rect = Rectangle(1, 2, 3, "4")
 
     def test_rectangle_val_error(self):
         with self.assertRaises(ValueError):
