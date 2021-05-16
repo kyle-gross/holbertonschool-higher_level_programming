@@ -10,8 +10,7 @@ from models.rectangle import Rectangle
 
 class TestBase(unittest.TestCase):
     """This class tests the Base class"""
-    def test_id(self):
-        """This method tests id functionality of Base"""
+    def test_auto_id(self):
         base = Base()
         self.assertEqual(base.id, 1)
         base2 = Base(None)
@@ -20,3 +19,9 @@ class TestBase(unittest.TestCase):
     def test_passed_id(self):
         base3 = Base(89)
         self.assertEqual(base3.id, 89)
+
+    def test_json_strings(self):
+        json_str = Base.to_json_string(None)
+        self.assertEqual(json_str, "[]")
+        json_str = Base.to_json_string([])
+        self.assertEqual(json_str, "[]")
