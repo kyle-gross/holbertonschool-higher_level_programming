@@ -45,6 +45,12 @@ class TestRectangle(unittest.TestCase):
         rect.display()
         self.assertEqual(mock_stdout.getvalue(), "#\n")
 
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def test_display_all_args(self, mock_stdout):
+        rect = Rectangle(1, 1, 1, 1)
+        rect.display()
+        self.assertEqual(mock_stdout.getvalue(), "\n #\n")
+
     def test_rectangle_type_error(self):
         with self.assertRaises(TypeError):
             rect = Rectangle("1", 2)
