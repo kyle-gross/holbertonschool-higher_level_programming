@@ -45,11 +45,16 @@ class TestRectangle(unittest.TestCase):
         rect2 = Rectangle.create(**rect_dict)
 
     def test_save(self):
+        file_path = "Rectangle.json"
         Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as f:
+        with open(file_path, "r") as f:
             self.assertEqual(f.read(), "[]")
         Rectangle.save_to_file([])
-        self.assertTrue(os.path.exists("Rectangle.json"))
+        self.assertTrue(os.path.exists(file_path))
+        if os.path.exists(file_path):
+            os.remove(file_path)
+        Rectangle.save_to_file([Rectangle(1, 2, 0, 0, 89)])
+        self.assertTrue(os.path.exists(file_path))
 
     def test_load(self):
         file_path = "Rectangle.json"
