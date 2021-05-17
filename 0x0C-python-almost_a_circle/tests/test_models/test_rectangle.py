@@ -3,6 +3,7 @@
 
 
 import unittest
+from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -37,6 +38,12 @@ class TestRectangle(unittest.TestCase):
     def test_str(self):
         rect = Rectangle(1, 2, 0, 0, 1)
         self.assertEqual(str(rect), "[Rectangle] (1) 0/0 - 1/2")
+
+    def test_display(self):
+        def display_4_args(mock_print):
+            rect = Rectangle(1, 1, 1, 1)
+            rect.display()
+            mock_print.assert_called_with(1, 1, 1, 1)
 
     def test_rectangle_type_error(self):
         with self.assertRaises(TypeError):
