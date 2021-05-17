@@ -2,9 +2,9 @@
 """This module contains unit tests for Rectangle"""
 
 
+import io
 import unittest
-from unittest.mock import patch
-from models.base import Base
+import unittest.mock
 from models.rectangle import Rectangle
 
 
@@ -39,14 +39,11 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(1, 2, 0, 0, 1)
         self.assertEqual(str(rect), "[Rectangle] (1) 0/0 - 1/2")
 
-    def test_display(mock_print, self):
-        rect = Rectangle(1, 1, 1)
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def test_display(self, mock_stdout):
+        rect = Rectangle(1, 1)
         rect.display()
-        mock_print.assert_called_with(1, 1, 1)
-        def test_display_2_args(mock_print):
-            rect = Rectangle(1, 1)
-            rect.display
-            mock_print.assert_called_with(1, 1)
+        self.assertEqual(mock_stdout.getvalue(), "#\n")
 
     def test_rectangle_type_error(self):
         with self.assertRaises(TypeError):
