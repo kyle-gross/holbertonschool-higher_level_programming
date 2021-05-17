@@ -41,6 +41,7 @@ class TestRectangle(unittest.TestCase):
         rect_dict = rect.to_dictionary()
         self.assertEqual(
             rect_dict, {'width': 1, 'height': 2, 'x': 3, 'y': 4, 'id': 5})
+        rect2 = Rectangle.create(**rect_dict)
 
     def test_area(self):
         rect = Rectangle(1, 2)
