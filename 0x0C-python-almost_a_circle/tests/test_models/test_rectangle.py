@@ -39,12 +39,11 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(1, 2, 0, 0, 1)
         self.assertEqual(str(rect), "[Rectangle] (1) 0/0 - 1/2")
 
-    def test_display(self):
-        def display_3_args(mock_print):
-            rect = Rectangle(1, 1, 1)
-            rect.display()
-            mock_print.assert_called_with(1, 1, 1)
-        def display_2_args(mock_print):
+    def test_display(mock_print, self):
+        rect = Rectangle(1, 1, 1)
+        rect.display()
+        mock_print.assert_called_with(1, 1, 1)
+        def test_display_2_args(mock_print):
             rect = Rectangle(1, 1)
             rect.display
             mock_print.assert_called_with(1, 1)
