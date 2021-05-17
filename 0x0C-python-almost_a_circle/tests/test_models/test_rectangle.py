@@ -2,6 +2,7 @@
 """This module contains unit tests for Rectangle"""
 
 
+import os
 import io
 import unittest
 import unittest.mock
@@ -42,6 +43,20 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(
             rect_dict, {'width': 1, 'height': 2, 'x': 3, 'y': 4, 'id': 5})
         rect2 = Rectangle.create(**rect_dict)
+
+    def test_save(self):
+        Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+
+    def test_load(self):
+        file_path = "Rectangle.json"
+        if os.path.exists(file_path):
+            os.remove(file_path)
+        self.assertEqual(Rectangle.load_from_file(), [])
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists(file_path))        
 
     def test_area(self):
         rect = Rectangle(1, 2)
