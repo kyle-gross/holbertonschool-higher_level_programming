@@ -30,6 +30,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
         self.assertEqual(rect.id, 5)
+        # to_dict test
+        rect_dict = rect.to_dictionary()
+        self.assertEqual(
+            rect_dict, {'width': 1, 'height': 2, 'x': 3, 'y': 4, 'id': 5})
 
     def test_area(self):
         rect = Rectangle(1, 2)
