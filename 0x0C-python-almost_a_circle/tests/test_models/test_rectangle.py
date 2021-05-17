@@ -22,6 +22,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         self.assertEqual(rect.x, 1)
         self.assertEqual(rect.y, 2)
+        # update() test
+        rect.update(2, 2, 2, 2, 2)
+        self.assertEqual(rect.width, 2)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 2)
+        self.assertEqual(rect.y, 2)
+        self.assertEqual(rect.id, 2)
 
     def test_rectangle_5_args(self):
         rect = Rectangle(1, 2, 3, 4, 5)
