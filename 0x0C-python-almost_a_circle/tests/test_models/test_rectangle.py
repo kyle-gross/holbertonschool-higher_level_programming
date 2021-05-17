@@ -46,6 +46,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_save(self):
         file_path = "Rectangle.json"
+        if os.path.exists(file_path):
+            os.remove(file_path)
         Rectangle.save_to_file(None)
         with open(file_path, "r") as f:
             self.assertEqual(f.read(), "[]")
