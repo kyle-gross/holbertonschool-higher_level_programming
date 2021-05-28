@@ -12,7 +12,8 @@ if __name__ == "__main__":
                                     argv[3])
 
     cursor = db_connection.cursor()
-    cursor.execute('SELECT * FROM states WHERE name = "{}"'.format(argv[4]))
+    cursor.execute('SELECT * FROM states WHERE BINARY name = "{}"'
+                   .format(argv[4]))
 
     states = cursor.fetchall()
 
