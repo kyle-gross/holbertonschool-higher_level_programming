@@ -17,5 +17,5 @@ if __name__ == "__main__":
     states = cursor.fetchall()
 
     for i in range(len(states)):
-        if (states[i][1] startswith('N')):
+        if (states[i][1].startswith('N')):
             print(states[i])
