@@ -12,10 +12,9 @@ if __name__ == "__main__":
                                     argv[3])
 
     cursor = db_connection.cursor()
-    cursor.execute('SELECT * FROM states')
+    cursor.execute('SELECT * FROM states WHERE name = "{}"'.format(argv[4]))
 
     states = cursor.fetchall()
 
     for i in range(len(states)):
-        if (argv[4] == states[i][1]):
-            print(states[i])
+        print(states[i])
