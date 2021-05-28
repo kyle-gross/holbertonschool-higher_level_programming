@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-"""
-This module contains a script which lists all states
-from the hbtn_0e_0_usa database
-"""
-
-
+"""Lists all statesfrom the hbtn_0e_0_usa database"""
 from sys import argv
 import MySQLdb
 
