@@ -5,7 +5,7 @@
 if __name__ == "__main__":
     from sys import argv
     import MySQLdb
-    
+
     db_connection = MySQLdb.connect('localhost',
                                     argv[1],
                                     argv[2],
@@ -16,4 +16,5 @@ if __name__ == "__main__":
 
     states = cursor.fetchall()
 
-    print(states)
+    for i in range(len(states)):
+        print(states[i])
