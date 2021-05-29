@@ -11,10 +11,21 @@ if __name__ == "__main__":
                                     argv[2],
                                     argv[3])
 
-    cursor = db_connection.cursor()
-    cursor.execute('SELECT * FROM cities')
+    with db_connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT
+                cities.id,
+                cities.name,
+                states.name
+            FROM
+                cities
+            JOIN
+                states
+            ON
+                cities.state_id = states.id
+            """)
 
-    cities = cursor.fetchall()
+        cities = cursor.fetchall()
 
     for i in range(len(cities)):
         print(cities[i])
