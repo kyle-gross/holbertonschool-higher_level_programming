@@ -11,7 +11,6 @@ if __name__ == "__main__":
                                     argv[2],
                                     argv[3])
 
-    cursor = db_connection.cursor()
     with db_connection.cursor() as cursor:
         cursor.execute("""
             SELECT
