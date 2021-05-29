@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cursor = db_connection.cursor()
     with db_connection.cursor() as cursor:
         cursor.execute("""
-            SELECT 
+            SELECT
                 *
             FROM
                 states
