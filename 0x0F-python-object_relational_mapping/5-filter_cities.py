@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Safely lists all cities that from the hbtn_0e_0_usa database"""
+"""
+Safely lists all cities from the hbtn_0e_0_usa database
+that match the state specified by argv[4]
+"""
 
 
 if __name__ == "__main__":
