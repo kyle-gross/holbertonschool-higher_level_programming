@@ -9,6 +9,6 @@ if (typeof myArgs[0] === 'undefined' || isNaN(myArgs[0])) {
 } else {
   console.log(add(myArgs[0], myArgs[1]));
 }
-function add(a, b) {
-    return +a + +b;
+function add (a, b) {
+  return +a + +b;
 }
