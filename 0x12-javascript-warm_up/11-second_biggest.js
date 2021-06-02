@@ -2,8 +2,10 @@
 
 const myArgs = process.argv.slice(2);
 
-if (typeof myArgs[0] === 'undefined' || isNaN(myArgs[0])) {
+if (myArgs.length === 0) {
   console.log('%i', 0);
+} else if (myArgs.length === 1) {
+  console.log(myArgs[0])
 } else {
   console.log(secondMax(myArgs));
 }
