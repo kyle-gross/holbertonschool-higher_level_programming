@@ -2,7 +2,7 @@
 
 exports.converter = function (base) {
   function baseChanger (number) {
-    return number.toString();
+    return number.toString(base);
   }
   return baseChanger;
 };
